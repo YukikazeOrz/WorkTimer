@@ -8,10 +8,10 @@ class WorkReminderApp:
     def __init__(self, root):
         self.root = root
         self.root.title("Work Reminder")
-        self.root.geometry("800x800")  # 窗口大小
+        self.root.geometry("400x400")  # 窗口大小
 
         # 设置 DPI 缩放适配
-        self.root.tk.call('tk', 'scaling', 2)  # 调整为合适的比例（1.5 可根据需要调整）
+        self.root.tk.call('tk', 'scaling', 1.5)  # 调整为合适的比例（1.5 可根据需要调整）
 
         self.work_minutes = 25  # 工作时间默认为25分钟
         self.work_seconds = 0
@@ -128,8 +128,8 @@ class WorkReminderApp:
             self.message_label.config(text=f"{phase}时间结束!")
 
     def play_sound(self):
-        for freq in [523, 587, 659, 698]:
-            winsound.Beep(freq, 250)
+        for freq in [523, 587, 659, 698, 523, 587, 659, 698]:
+            winsound.Beep(freq, 120)
 
 if __name__ == "__main__":
     root = tk.Tk()
